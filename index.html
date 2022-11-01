@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello JS</title>
+    <!-- external css  -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Internal style  -->
+    <style>
+        /* h1 {
+            background-color: aquamarine;
+        } */
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 id="head-title">Learning HTML</h1>
+    </header>
+    <main>
+        <section>
+            <ul id="list">
+                <li>Item-1</li>
+                <li>Item-2</li>
+                <li>Item-3</li>
+                <li>Item-4</li>
+                <li>Item-5</li>
+            </ul>
+        </section>
+
+        <section id="blog-section">
+            <article class="blog">
+                <h3 id="first-title" style="text-align: center;">My Blog -1</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos tempore aut aliquam pariatur
+                    doloribus animi ut dolore, eveniet velit ab corporis unde distinctio atque quidem sint dicta
+                    laborum! Perspiciatis, eligendi.</p>
+            </article>
+            <article class="blog">
+                <h3>My Blog -2</h3>
+                <p>Ullam, officiis assumenda! Dolorem laudantium, atque sunt, possimus aspernatur voluptatem excepturi
+                    unde voluptates officiis quaerat dolore? Tempore beatae doloremque dolores, ipsam voluptatum, natus
+                    veritatis mollitia quod veniam, reprehenderit excepturi sed!</p>
+            </article>
+            <article class="blog">
+                <h3>My Blog -3</h3>
+                <p>Totam, incidunt laborum architecto similique consectetur quos sunt veniam sint iste illo neque,
+                    perspiciatis modi a quisquam iusto qui in eveniet expedita vel dolor? Quo at tempora earum facilis
+                    libero.</p>
+            </article>
+
+        </section>
+    </main>
+
+
+
+    <script>
+        // console.log('JS is added using internal script tag');
+        const firstTitle = document.getElementById('first-title');
+        // console.log(firstTitle.parentNode);
+        firstTitle.setAttribute('title', 'I can add a tooltip using JS');
+
+        // To create an element we have to follow few steps 
+        // step-1: create the element 
+        const li = document.createElement('li');
+        li.innerText = 'Item-6';
+        // document.createElement('li').innerText='Item-6';
+
+        // Step-2: where to add , finding parent tag using id
+        const ul = document.getElementById('list');
+
+        // Step-3: append the child tag to parent tag 
+        ul.appendChild(li);
+
+        // Creating an additional article tag
+        const article = document.createElement('article');
+        article.classList.add('blog');
+        // method-1
+        // const h3 = document.createElement('h3');
+        // h3.innerText = 'My Blog - 4';
+
+        // const p = document.createElement('p');
+        // p.innerText = 'Fourth paragrapgh text, incidunt laborum architecto similique consectetur quos sunt veniam sint iste illo neque,perspiciatis modi a quisquam iusto qui in eveniet expedita vel dolor ? Quo at tempora earum facilis   libero.';
+
+        // article.appendChild(h3);
+        // article.appendChild(p);
+
+        // //parent of article tag
+
+        // const blogSection = document.getElementById('blog-section');
+        // blogSection.appendChild(article);
+
+        // method-2 
+        article.innerHTML = `
+        <h3> My Blog -4</h3>
+        <p>Fourth paragrapgh text, incidunt laborum architecto similique consectetur quos sunt veniam sint iste illo neque,perspiciatis modi a quisquam iusto qui in eveniet expedita vel dolor ? Quo at tempora earum facilis   libero.</p>
+        `
+        const blogSection = document.getElementById('blog-section');
+        blogSection.appendChild(article);
+
+
+
+
+    </script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

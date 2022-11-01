@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Events</title>
+</head>
+
+<body>
+    <h1>Learning JS Events</h1>
+
+
+    <button onclick="alert()">Click Me</button>
+    <button onclick="console.log('Clicked')">Click Me Again</button>
+    <button onclick="document.body.style.backgroundColor='yellow'">Click Me: Yellow</button>
+    <button onclick="myGrey()">Click Me: Grey</button>
+    <button id="btn-navy">Click Me: Navy</button>
+    <button id="btn-coral">Click Me: Light Coral</button>
+    <button id="btn-red">Click Me: Indian Red</button>
+    <button id="btn-cyan">Click Me: Cyan </button>
+
+
+    <script>
+        function myGrey() {
+            document.body.style.backgroundColor = 'grey';
+        }
+
+        const navyButton = document.getElementById('btn-navy');
+        navyButton.onclick = myNavy;
+
+        function myNavy() {
+            document.body.style.backgroundColor = 'navy';
+        }
+
+        document.getElementById('btn-coral').onclick = function myLightCoral() {
+            document.body.style.backgroundColor = 'lightcoral';
+        }
+
+        //anonymous function
+        document.getElementById('btn-red').onclick = function () {
+            document.body.style.backgroundColor = 'IndianRed';
+        }
+
+
+        const cyanButton = document.getElementById('btn-cyan');
+        // cyanButton.addEventListener('click', myCyan)
+        // function myCyan() {
+        //     document.body.style.backgroundColor = 'cyan';
+        // }
+        // cyanButton.addEventListener('click', function myCyan() {
+        //     document.body.style.backgroundColor = 'cyan';
+        // })
+        //direct shortcut method
+        cyanButton.addEventListener('click', function () {
+            document.body.style.backgroundColor = 'cyan';
+        })
+
+
+    </script>
+</body>
+
+</html>
